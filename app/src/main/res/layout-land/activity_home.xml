@@ -9,37 +9,38 @@
         tools:context=".Home">
 
     <ImageView
-            android:layout_width="215dp"
-            android:layout_height="183dp" app:srcCompat="@drawable/logo" android:id="@+id/imageView"
+            android:layout_width="220dp"
+            android:layout_height="221dp" app:srcCompat="@drawable/logo" android:id="@+id/imageView"
             android:layout_marginTop="8dp"
             app:layout_constraintTop_toTopOf="parent" android:layout_marginBottom="8dp"
             app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
-            app:layout_constraintHorizontal_bias="0.502" app:layout_constraintVertical_bias="0.134"/>
+            app:layout_constraintHorizontal_bias="0.14" app:layout_constraintVertical_bias="0.434"/>
     <Button
             android:text="Search for an artist"
-            android:layout_width="300dp"
-            android:layout_height="101dp"
+            android:layout_width="275dp"
+            android:layout_height="90dp"
             android:id="@+id/searchbutton" android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/imageView" android:layout_marginBottom="8dp"
-            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintVertical_bias="0.149"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintVertical_bias="0.28"
             tools:textSize="24sp"
             android:layout_marginEnd="8dp"
             app:layout_constraintEnd_toEndOf="parent" android:layout_marginStart="8dp"
             android:background="@drawable/my_button"
-            app:layout_constraintStart_toStartOf="parent" style="@android:style/Widget.Button"
-            tools:textColor="@android:color/white" android:textColor="@android:color/background_light"/>
+            style="@android:style/Widget.Button" app:layout_constraintStart_toEndOf="@+id/imageView"
+            app:layout_constraintHorizontal_bias="0.13" app:layout_constraintTop_toTopOf="parent"
+            android:textColor="@android:color/white"/>
     <Button
             android:text="About this application"
-            android:layout_width="300dp"
-            android:layout_height="100dp"
+            android:layout_width="275dp"
+            android:layout_height="90dp"
             android:id="@+id/searchbutton2" android:layout_marginTop="8dp"
             app:layout_constraintTop_toBottomOf="@+id/searchbutton" android:layout_marginBottom="8dp"
-            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintVertical_bias="0.169"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintVertical_bias="0.0"
             tools:textSize="24sp"
             android:layout_marginEnd="8dp"
             app:layout_constraintEnd_toEndOf="parent" android:layout_marginStart="8dp"
             android:background="@drawable/my_button"
-            app:layout_constraintStart_toStartOf="parent" style="@android:style/Widget.Button"
-            tools:textColor="@android:color/white" android:textColor="@android:color/background_light"/>
+            style="@android:style/Widget.Button" app:layout_constraintStart_toEndOf="@+id/imageView"
+            app:layout_constraintHorizontal_bias="0.123" android:textColor="@android:color/white"/>
 </android.support.constraint.ConstraintLayout>
