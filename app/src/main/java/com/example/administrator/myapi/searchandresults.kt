@@ -4,9 +4,11 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
+import android.view.View
 import android.widget.Button
 import android.widget.TextView
 import com.beust.klaxon.Klaxon
+import khttp.async
 import kotlinx.android.synthetic.main.activity_searchandresults.*
 import layout.MyAdapter
 import org.w3c.dom.Text
@@ -14,39 +16,37 @@ import org.w3c.dom.Text
 
 class searchandresults : AppCompatActivity() {
 
+    val searchUrl = "https://api.deezer.com/search/artist?q="
+
+    var ListOfTracks = arrayListOf<Track>()
+    lateinit var adapter:MyAdapter
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_searchandresults)
 
-        val MySubmitButton = findViewById<Button>(R.id.submitbutton)
-        val ListOfTracks = ArrayList<Track>()
+        adapter = MyAdapter(ListOfTracks, this)
 
-        recyclerview.layoutManager = LinearLayoutManager( this)
+        track_recyclerView.adapter = adapter
 
+        track_recyclerView.layoutManager = LinearLayoutManager(this)
 
+    }
+    fun PopulateTracks(view:View) {
+        async.get(searchUrl + artistname.text.toString(), onResponse = {
+            // use klaxon to parse the response (this.text)
+            // Klaxon().converter(MyConverter()).parse(this.text)
+        })
 
-        //Populating the list
-        for (i in 1..100)
-        {
-            val currenttrack = Track(i.toString(), i.toString())
-            ListOfTracks.plus(currenttrack)
-            println(currenttrack.name + currenttrack.length)
-        }
+        var i = 100
 
-        recyclerview.adapter = MyAdapter(ListOfTracks)
+       while (i != 1)
+       {
+           ListOfTracks.add(Track(i.toString(), i.toString()))
+           i -= 1
+       }
 
-
-
-        MySubmitButton.setOnClickListener{
-            val ArtistName = findViewById<TextView>(R.id.artistname).text.toString()
-            println(ArtistName)
-
-
-        }
+        adapter.notifyDataSetChanged()
     }
 
-
-
-
-    
 }
