@@ -27,7 +27,7 @@ import android.graphics.ColorSpace.Model
 class searchandresults : AppCompatActivity() {
 
     //Declaring values to be referenced during runtime
-    var SearchUrlforArist = "https://api.deezer.com/artist/"
+    var SearchUrlforArist = "https://api.deezer.com/search/artist?q="
     var ListOfTracks = arrayListOf<Track>()
 
     //Late init tells the system that this variable is to be assigned to during runtime however needs to be non-null.
@@ -49,14 +49,25 @@ class searchandresults : AppCompatActivity() {
     }
     //This function sends a get request to the Deezer api and builds a list of tracks with the response which are to be passed to the recycler view adapter.
     fun PopulateTracks(view:View) {
+
       async.get(SearchUrlforArist + artistname.text, onResponse = {
 
+
           var gson = Gson()
-
           var artistdata = this.text
-          var testModel = gson.fromJson(artistdata, Artist::class.java)
+          var testModel = gson.fromJson(artistdata, ArtistSearch::class.java)
 
-          println(testModel.id)
+
+
+            async.get("https://api.deezer.com/artist/${testModel.data[0].id}/top", onResponse = {
+                var trackModel = gson.fromJson(this.text, ArtistTracks::class.java)
+                for (track in trackModel.data) {
+                    ListOfTracks.add(track)
+                }
+
+                runOnUiThread { adapter.notifyDataSetChanged() }
+            })
+
 
 
 

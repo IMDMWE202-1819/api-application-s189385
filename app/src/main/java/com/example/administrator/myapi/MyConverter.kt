@@ -13,6 +13,14 @@ data class Results(
 ) : Parcelable
 
 @Parcelize
+data class ArtistTracks(
+    val data: List<Track>,
+    val total: Int?,
+    val next: String? = null,
+    val prev: String? = null
+) : Parcelable
+
+@Parcelize
 data class Track(
 
     val id: Int?,
@@ -35,9 +43,51 @@ data class Track(
     val gain: Float?,
     val available_countries: String?,
     val alternative: String?,
-    val contributors: String?,
-    val artist: String?,
-    val album: String?
+    val contributors: List<Contributor?>,
+    val artist: TrackArtist,
+    val album: album?,
+    val type: String?
+) : Parcelable
+
+@Parcelize
+data class TrackArtist(
+    val id: String?,
+    val name: String?,
+    val tracklist: String?,
+    val type: String?
+) : Parcelable
+
+@Parcelize
+data class album(
+    val id: String?,
+    val title: String?,
+    val cover: String,
+    val cover_small: String,
+    val cover_medium: String,
+    val cover_big: String,
+    val cover_xl: String,
+    val tracklist: String?,
+    val type: String
+
+
+) : Parcelable
+
+
+@Parcelize
+data class Contributor(
+    val id: Int?,
+    val name: String?,
+    val link: String?,
+    val share: String?,
+    val picture: String?,
+    val picture_small:String?,
+    val picture_medium: String?,
+    val picture_big: String?,
+    val picture_xl: String?,
+    val radio: Boolean,
+    val tracklist: String?,
+    val type: String?,
+    val role: String?
 ) : Parcelable
 
 @Parcelize
@@ -59,3 +109,12 @@ data class Artist(
     val tracklist: String
 
 ) : Parcelable
+
+@Parcelize
+data class ArtistSearch(
+    val data: List<Artist>,
+    val total: String?,
+    val next: String? = null,
+    val prev: String? = null
+) : Parcelable
+
