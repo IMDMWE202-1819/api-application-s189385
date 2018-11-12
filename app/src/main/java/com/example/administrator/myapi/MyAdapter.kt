@@ -32,11 +32,19 @@ class MyAdapter(val Tracks: ArrayList<Track>, val context: Context) : RecyclerVi
         private val trackName: TextView = itemView.findViewById(R.id.tracks_track_name)
         private val trackLength: TextView = itemView.findViewById(R.id.tracks_track_length)
 
-        //Binds the data from each track to the layout file
+        //Binds the data from each track to fields within the class
         fun bindTrack(track:Track) {
+
             trackName.text = track.title_short
-            trackLength.text = track.duration.toString()
+            trackLength.text =  ConvertToMinutes(track.duration!!)
         }
+
+        fun ConvertToMinutes(seconds: Int): String {
+            var Minutes = seconds / 60
+            return Minutes.toString()
+        }
+
+
     }
 
 

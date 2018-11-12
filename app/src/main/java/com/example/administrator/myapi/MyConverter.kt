@@ -6,12 +6,13 @@ import com.beust.klaxon.JsonValue
 import kotlinx.android.parcel.Parcelize
 import java.util.*
 
-
+//Class for results which is a list of tracks
 @Parcelize
 data class Results(
     val list: List<Track>
 ) : Parcelable
 
+//Used to parse the artists tracks into the class
 @Parcelize
 data class ArtistTracks(
     val data: List<Track>,
@@ -20,9 +21,9 @@ data class ArtistTracks(
     val prev: String? = null
 ) : Parcelable
 
+//Needed to parse the list of tracks
 @Parcelize
 data class Track(
-
     val id: Int?,
     val readable: Boolean?,
     val title: String?,
@@ -49,6 +50,7 @@ data class Track(
     val type: String?
 ) : Parcelable
 
+//Needed to parse the request and store the data relating to this class
 @Parcelize
 data class TrackArtist(
     val id: String?,
@@ -57,6 +59,7 @@ data class TrackArtist(
     val type: String?
 ) : Parcelable
 
+//Needed to parse the request and store the data relating to this class
 @Parcelize
 data class album(
     val id: String?,
@@ -68,11 +71,9 @@ data class album(
     val cover_xl: String,
     val tracklist: String?,
     val type: String
-
-
 ) : Parcelable
 
-
+//Needed to parse the request and store the data relating to this class
 @Parcelize
 data class Contributor(
     val id: Int?,
@@ -90,9 +91,9 @@ data class Contributor(
     val role: String?
 ) : Parcelable
 
+//Needed to parse the request and store the data relating to this class
 @Parcelize
 data class Artist(
-
     val id: Int?,
     val name: String?,
     val title: String?,
@@ -107,9 +108,9 @@ data class Artist(
     val nb_fan: Int,
     val radio: Boolean,
     val tracklist: String
-
 ) : Parcelable
 
+//Needed to parse the request and store the data relating to this class
 @Parcelize
 data class ArtistSearch(
     val data: List<Artist>,
