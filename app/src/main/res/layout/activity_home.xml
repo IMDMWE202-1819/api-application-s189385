@@ -16,34 +16,18 @@
             app:layout_constraintTop_toTopOf="parent" android:layout_marginBottom="8dp"
             app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
-            app:layout_constraintVertical_bias="0.252"/>
+            app:layout_constraintVertical_bias="0.389"/>
     <Button
             android:text="Search for an artist"
             android:layout_width="300dp"
-            android:layout_height="101dp"
-            android:id="@+id/searchbutton"
-            android:layout_marginBottom="188dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            tools:textSize="24sp"
+            android:layout_height="64dp"
+            android:id="@+id/search_button"
+            tools:textSize="30dp"
             android:layout_marginEnd="8dp"
             app:layout_constraintEnd_toEndOf="parent" android:layout_marginStart="8dp"
             android:background="@drawable/my_button"
             app:layout_constraintStart_toStartOf="parent" style="@android:style/Widget.Button"
-            tools:textColor="@android:color/white" android:textColor="@android:color/background_light"
-            android:layout_marginTop="8dp"
-            app:layout_constraintTop_toTopOf="parent" app:layout_constraintVertical_bias="0.93"/>
-    <Button
-            android:text="About this application"
-            android:layout_width="300dp"
-            android:layout_height="100dp"
-            android:id="@+id/aboutbutton" android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/searchbutton" android:layout_marginBottom="8dp"
-            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintVertical_bias="0.0"
-            tools:textSize="24sp"
-            android:layout_marginEnd="8dp"
-            app:layout_constraintEnd_toEndOf="parent" android:layout_marginStart="8dp"
-            android:background="@drawable/my_button"
-            app:layout_constraintStart_toStartOf="parent" style="@android:style/Widget.Button"
-            tools:textColor="@android:color/white" android:textColor="@android:color/background_light"
-    />
+            tools:textColor="@android:color/black"
+            app:layout_constraintHorizontal_bias="0.494" android:layout_marginBottom="172dp"
+            app:layout_constraintBottom_toBottomOf="parent"/>
 </android.support.constraint.ConstraintLayout>

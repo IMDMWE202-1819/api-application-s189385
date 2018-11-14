@@ -17,12 +17,12 @@
             android:layout_marginTop="8dp"
             app:layout_constraintTop_toTopOf="parent" android:layout_marginBottom="8dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintVertical_bias="0.051"
+            app:layout_constraintVertical_bias="0.042"
             android:gravity="center"
-            android:background="@drawable/my_button_black"
+            android:background="@drawable/my_button"
             android:hint="Artist/Group name" android:layout_marginEnd="64dp" app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginStart="8dp" app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintHorizontal_bias="0.338"/>
+            app:layout_constraintHorizontal_bias="0.337"/>
     <Button
             android:layout_width="89dp"
             android:layout_height="87dp"
@@ -30,11 +30,11 @@
             android:layout_marginBottom="8dp"
             android:background="@drawable/search"
             app:layout_constraintBottom_toBottomOf="parent" android:layout_marginTop="8dp"
-            app:layout_constraintTop_toTopOf="parent" app:layout_constraintVertical_bias="0.017"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintVertical_bias="0.014"
             android:onClick="PopulateTracks"
             android:layout_marginStart="8dp" app:layout_constraintStart_toStartOf="parent"
             android:layout_marginEnd="8dp" app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"/>
+            app:layout_constraintHorizontal_bias="0.973"/>
     <android.support.v7.widget.RecyclerView
             android:layout_width="395dp"
             android:layout_height="263dp" app:layout_constraintEnd_toEndOf="parent"
@@ -52,5 +52,5 @@
             android:layout_marginEnd="8dp" app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="8dp" android:layout_marginBottom="8dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintVertical_bias="0.366"/>
+            app:layout_constraintVertical_bias="0.314" app:layout_constraintHorizontal_bias="0.498"/>
 </android.support.constraint.ConstraintLayout>

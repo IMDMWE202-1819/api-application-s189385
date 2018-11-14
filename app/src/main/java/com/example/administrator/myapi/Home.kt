@@ -13,7 +13,7 @@ class Home : AppCompatActivity() {
         setContentView(R.layout.activity_home)
 
         //Declaring the button as a value so it can be referenced
-        val MySearchButton = findViewById<Button>(R.id.searchbutton)
+        val MySearchButton = findViewById<Button>(R.id.search_button)
 
         //On click event navigating to the search page
         MySearchButton.setOnClickListener{

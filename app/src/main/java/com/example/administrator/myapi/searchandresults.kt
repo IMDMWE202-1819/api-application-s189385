@@ -33,7 +33,7 @@ class searchandresults : AppCompatActivity() {
     var SearchUrlforArist = "https://api.deezer.com/search/artist?q="
     var ListOfTracks = arrayListOf<Track>()
 
-    //Late init tells the system that this variable is to be assigned to during runtime however needs to be non-null.
+    //Late init tells the system that this variable is to be assigned to during runtime
     lateinit var adapter:MyAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
